@@ -1,0 +1,122 @@
+import styled from 'styled-components'
+
+export const ContentWrapper = styled.div`
+  align-items: center;
+  background-color: ${props => props.theme.colors.mainBodyBackground};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+`
+
+export const ModalNavigation = styled.div`
+  display: flex;
+  background-color: ${props => props.theme.colors.mainBodyBackground};
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 14px;
+`
+//Demiurge
+export const TxContentWrapper = styled.div`
+  align-items: center;
+  background-color: ${props => props.theme.colors.white};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+`
+
+export const TxModalNavigation = styled.div`
+  display: flex;
+  background-color: ${props => props.theme.colors.white};
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 14px;
+`
+
+export const ModalNavigationLeft = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const ModalTitle = styled.p`
+  font-size: ${props => props.theme.switchNetworkModal.primaryFontSize};
+  color: ${props => props.theme.colors.textColorDark};
+  font-weight: ${props => props.theme.textfield.fontWeight};
+  line-height: 19px;
+  letter-spacing: 0.2px;
+  margin-top: 10px;
+  margin-left: 10px;
+`
+
+export const ModalCard = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: ${props => props.theme.cards.borderRadius};
+
+  &:nth-child(3),
+  &:nth-child(4) {
+    margin-top: 16px;
+  }
+`
+
+export const BalanceSection = styled.div<{ borderBottom?: boolean }>`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  ${props => props.borderBottom && `border-bottom: ${props.theme.borders.borderLineDisabled};`}};
+`
+
+export const BalanceItems = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
+
+export const BalanceItemSide = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const BalanceItemTitle = styled.p<{ notSelected?: boolean }>`
+  font-size: ${props => props.theme.fonts.defaultSize};
+  color: ${props => (props.notSelected ? props.theme.colors.textColorLighter : props.theme.colors.textColorDark)};
+  margin: 0;
+`
+
+export const BalanceItemBalance = styled.p`
+  font-size: ${props => props.theme.fonts.defaultSize};
+  color: ${props => props.theme.colors.textColorLighter};
+  margin: 0;
+`
+export const BalanceItem = styled.div<{ hover?: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  &:not(:first-child){
+    margin-top: 14px;
+  }
+
+  &:hover {
+    
+   ${BalanceItemSide}{
+   ${BalanceItemTitle}{
+   color: ${props => props.theme.colors.textColorDark}; !important;
+   }
+ 
+   }
+  }
+`
